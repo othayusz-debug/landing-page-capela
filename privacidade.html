@@ -83,6 +83,259 @@
         }
         
         .highlight strong {
+            color: #967623;
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-top: 45px; 
+            margin-bottom: 20px; 
+            font-size: 1.6em; 
+            border-bottom: 2px solid rgba(44, 95, 124, 0.1); 
+            padding-bottom: 10px; 
+        }
+
+        h3 { 
+            color: var(--accent); 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            font-size: 1.2em;
+        }
+
+        p, li { 
+            margin-bottom: 15px; 
+            color: #444;
+        }
+
+        ul { 
+            margin-left: 20px; 
+            margin-bottom: 25px;
+        }
+        
+        li { padding-left: 5px; }
+        li::marker { color: var(--secondary); }
+
+        /* Estilo das Tabelas */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white;
+            min-width: 600px;
+        }
+
+        table th { 
+            background: var(--primary); 
+            color: white; 
+            padding: 15px; 
+            text-align: left;
+            font-weight: 600;
+            font-family: 'Merriweather', serif;
+        }
+
+        table td { 
+            padding: 15px; 
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        table tr:nth-child(even) { 
+            background-color: var(--table-row); 
+        }
+        
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .date { 
+            font-style: italic; 
+            color: #888; 
+            margin-bottom: 30px; 
+            font-size: 0.9em;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .footer { 
+            text-align: center; 
+            padding: 30px; 
+            color: #666; 
+            font-size: 0.9em;
+        }
+        
+        .footer a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover { color: var(--secondary); }
+
+        @media (max-width: 768px) { 
+            .container { padding: 30px 20px; margin: 20px; margin-top: -20px; } 
+            .header { padding: 40px 20px 50px; }
+            h1 { font-size: 1.8em; }
+            table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">🕊️</div>
+        <h1>Política de Privacidade</h1>
+        <p>Capela de Bolso</p>
+    </div>
+
+    <div class="container">
+        <p class="date">Última atualização: Fevereiro de 2026</p>
+
+        <div class="highlight">
+            <p><strong>Resumo Executivo:</strong> Coletamos apenas os dados essenciais para personalizar suas orações diárias. Nunca compartilhamos ou vendemos suas informações. Você tem total controle sobre seus dados e pode solicitar exclusão a qualquer momento.</p>
+        </div>
+
+        <h2>1. Introdução</h2>
+        <p>A Capela de Bolso ("nós", "nosso" ou "Empresa") respeita sua privacidade e está comprometida com a proteção de seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos suas informações em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+
+        <h2>2. Responsável pelo Tratamento de Dados</h2>
+        <p><strong>Controlador de Dados:</strong> Capela de Bolso<br>
+        <strong>Email:</strong> capeladebolso@gmail.com<br>
+        <strong>WhatsApp:</strong> (11) 94028-9596</p>
+
+        <h2>3. Dados Coletados</h2>
+        <h3>3.1 Dados Fornecidos por Você</h3>
+        <p>Coletamos as seguintes informações quando você se cadastra:</p>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th width="30%">Dado</th>
+                    <th width="40%">Finalidade</th>
+                    <th width="30%">Base Legal (LGPD)</th>
+                </tr>
+                <tr><td>Nome completo</td><td>Personalizar orações e identificação</td><td>Execução de contrato</td></tr>
+                <tr><td>WhatsApp</td><td>Envio das orações diárias</td><td>Execução de contrato</td></tr>
+                <tr><td>Email</td><td>Comunicação administrativa e suporte</td><td>Execução de contrato</td></tr>
+                <tr><td>Tradição de fé</td><td>Adaptar linguagem das orações</td><td>Consentimento</td></tr>
+                <tr><td>Preferências</td><td>Personalizar entrega do conteúdo</td><td>Consentimento</td></tr>
+                <tr><td>Pedidos de oração</td><td>Gerar orações contextualizadas</td><td>Consentimento</td></tr>
+            </table>
+        </div>
+
+        <h3>3.2 Dados Coletados Automaticamente</h3>
+        <p>Durante o uso do serviço, coletamos:</p>
+        <ul>
+            <li><strong>Histórico de interações:</strong> Mensagens trocadas via WhatsApp para melhorar a personalização;</li>
+            <li><strong>Dados de pagamento:</strong> Processados por terceiros (Stripe) - não armazenamos dados completos de cartão de crédito;</li>
+            <li><strong>Metadados técnicos:</strong> Horário de envio/leitura das mensagens, status de entrega.</li>
+        </ul>
+
+        <h3>3.3 Dados que NÃO Coletamos</h3>
+        <p>Para sua tranquilidade, NÃO coletamos:</p>
+        <ul>
+            <li>Dados sensíveis de saúde (diagnósticos médicos específicos);</li>
+            <li>Informações financeiras completas (apenas ID da transação);</li>
+            <li>Localização geográfica precisa em tempo real.</li>
+        </ul>
+
+        <h2>4. Como Usamos Seus Dados</h2>
+        <h3>4.1 Finalidades Principais</h3>
+        <ul>
+            <li><strong>Prestação do Serviço:</strong> Gerar e enviar orações personalizadas diariamente;</li>
+            <li><strong>Personalização:</strong> Adaptar conteúdo à sua tradição de fé e necessidades específicas;</li>
+            <li><strong>Comunicação:</strong> Enviar avisos administrativos, atualizações e suporte;</li>
+            <li><strong>Processamento de Pagamentos:</strong> Gerenciar assinatura e cobranças recorrentes.</li>
+        </ul>
+
+        <h3>4.2 Inteligência Artificial</h3>
+        <p>Utilizamos sistemas de IA para gerar textos e áudios. <strong>Importante:</strong> Seus dados são usados apenas para processar SEU conteúdo individual. Não treinamos modelos de IA públicos com suas informações pessoais.</p>
+
+        <h2>5. Compartilhamento de Dados</h2>
+        <h3>5.1 Com Terceiros</h3>
+        <p>Compartilhamos dados apenas quando estritamente necessário com:</p>
+        
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Terceiro</th>
+                    <th>Dados Compartilhados</th>
+                    <th>Finalidade</th>
+                </tr>
+                <tr><td>Stripe</td><td>Nome, email, valor</td><td>Pagamentos</td></tr>
+                <tr><td>WhatsApp (Meta)</td><td>Telefone, mensagens</td><td>Entrega das orações</td></tr>
+                <tr><td>Provedores de IA</td><td>Pedidos de oração</td><td>Geração de conteúdo</td></tr>
+                <tr><td>Oracle Cloud</td><td>Dados criptografados</td><td>Hospedagem segura</td></tr>
+            </table>
+        </div>
+
+        <h2>6. Armazenamento e Segurança</h2>
+        <p>Seus dados são armazenados na Oracle Cloud (datacenter no Brasil) com criptografia de ponta a ponta e backups diários.</p>
+
+        <h2>7. Seus Direitos (LGPD)</h2>
+        <p>Você pode solicitar acesso, correção ou exclusão dos seus dados a qualquer momento enviando um email ou mensagem no WhatsApp.</p>
+
+        <h2>8. Cookies</h2>
+        <p>Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos anonimizados para melhorias de performance.</p>
+
+        <h2>9. Privacidade de Menores</h2>
+        <p>Nosso serviço não é destinado a menores de 18 anos.</p>
+
+        <h2>10. Alterações nesta Política</h2>
+        <p>A versão mais recente sempre estará disponível em nosso site.</p>
+
+        <h2>11. Contato e Reclamações</h2>
+        <h3>11.1 Entre em Contato Conosco</h3>
+        <p>Para questões sobre privacidade:</p>
+        <ul>
+            <li><strong>Email:</strong> capeladebolso@gmail.com</li>
+            <li><strong>WhatsApp:</strong> (11) 94028-9596</li>
+        </ul>
+
+        <h3>11.2 Autoridade de Supervisão</h3>
+        <p>Se você não estiver satisfeito, pode apresentar reclamação à <a href="https://www.gov.br/anpd" target="_blank">ANPD</a>.</p>
+
+        <hr style="margin: 50px 0; border: none; border-top: 1px solid #ddd;">
+
+        <div class="highlight" style="background: rgba(44, 95, 124, 0.1); border-left-color: var(--primary);">
+            <p><strong>Compromisso de Transparência:</strong> Estamos comprometidos com a transparência total. Se algo nesta política não estiver claro, por favor, entre em contato.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><a href="index.html">← Voltar para o site</a> | <a href="termos.html">Termos de Uso</a></p>
+        <p style="margin-top: 20px;">© 2026 Capela de Bolso. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
+        /* Conteúdo Principal */
+        .container { 
+            max-width: 900px; 
+            margin: -30px auto 40px; 
+            background: var(--white); 
+            padding: 60px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            position: relative;
+        }
+
+        /* Destaques (Resumo Executivo) */
+        .highlight { 
+            background: rgba(232, 196, 104, 0.15); 
+            border-left: 5px solid var(--secondary); 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05em;
+        }
+        
+        .highlight strong {
             color: #967623; /* Tom mais escuro do dourado para leitura */
         }
 
@@ -177,3 +430,4 @@
             font-weight: 600;
             transition: color 0.3s;
         }
+
