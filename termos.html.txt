@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Capela de Bolso</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.7; color: #333; background: #f5f5f5; }
+        .header { background: #2C5F7C; color: white; padding: 30px 20px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .container { max-width: 900px; margin: 40px auto; background: white; padding: 50px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h2 { color: #2C5F7C; margin-top: 30px; margin-bottom: 15px; font-size: 1.5em; border-bottom: 2px solid #E8C468; padding-bottom: 10px; }
+        h3 { color: #4A7C59; margin-top: 20px; margin-bottom: 10px; }
+        p, li { margin-bottom: 15px; }
+        ul { margin-left: 25px; }
+        .date { font-style: italic; color: #666; margin-bottom: 30px; }
+        .footer { text-align: center; padding: 30px; color: #666; }
+        .footer a { color: #2C5F7C; text-decoration: none; }
+        @media (max-width: 768px) { .container { padding: 30px 20px; margin: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Termos de Uso</h1>
+        <p>Capela de Bolso</p>
+    </div>
+
+    <div class="container">
+        <p class="date">Última atualização: Fevereiro de 2026</p>
+
+        <p>Bem-vindo à Capela de Bolso. Ao utilizar nosso serviço, você concorda com os seguintes termos e condições. Por favor, leia atentamente antes de assinar.</p>
+
+        <h2>1. Aceitação dos Termos</h2>
+        <p>Ao se cadastrar e utilizar o serviço Capela de Bolso, você declara que:</p>
+        <ul>
+            <li>Tem pelo menos 18 anos de idade ou possui autorização de seu responsável legal;</li>
+            <li>Leu, compreendeu e aceita estes Termos de Uso e nossa Política de Privacidade;</li>
+            <li>Forneceu informações verdadeiras, precisas e completas durante o cadastro;</li>
+            <li>Concorda em receber mensagens via WhatsApp conforme descrito no serviço.</li>
+        </ul>
+
+        <h2>2. Descrição do Serviço</h2>
+        <p>A Capela de Bolso é um serviço de assinatura que oferece:</p>
+        <ul>
+            <li>Orações diárias personalizadas enviadas via WhatsApp;</li>
+            <li>Conteúdo espiritual adaptado à sua tradição de fé (católica, evangélica ou cristã);</li>
+            <li>Possibilidade de escolha entre formato de texto ou áudio narrado;</li>
+            <li>Interação bidirecional para atualização de pedidos e preferências;</li>
+            <li>Suporte por WhatsApp para dúvidas e ajustes.</li>
+        </ul>
+
+        <h2>3. Assinatura e Pagamento</h2>
+
+        <h3>3.1 Plano e Valor</h3>
+        <p>O serviço é oferecido mediante assinatura mensal recorrente no valor de R$ 19,90 (dezenove reais e noventa centavos), cobrado mensalmente até o cancelamento.</p>
+
+        <h3>3.2 Forma de Pagamento</h3>
+        <p>O pagamento é processado por meio de cartão de crédito através de nosso gateway de pagamento seguro (Stripe). Ao assinar, você autoriza cobranças automáticas mensais.</p>
+
+        <h3>3.3 Renovação Automática</h3>
+        <p>Sua assinatura será renovada automaticamente no mesmo dia do mês em que você se cadastrou, salvo cancelamento prévio.</p>
+
+        <h3>3.4 Alteração de Preço</h3>
+        <p>Reservamo-nos o direito de alterar o valor da assinatura mediante aviso prévio de 30 dias. Você poderá cancelar antes que a nova tarifa entre em vigor.</p>
+        <h2>4. Cancelamento e Reembolso</h2>
+
+        <h3>4.1 Política de Cancelamento</h3>
+        <p>Você pode cancelar sua assinatura a qualquer momento através de:</p>
+        <ul>
+            <li>Mensagem no WhatsApp solicitando o cancelamento;</li>
+            <li>Email para capeladebolso@gmail.com;</li>
+            <li>Área de assinante no site (quando disponível).</li>
+        </ul>
+        <p>O cancelamento será processado em até 24 horas úteis. Você continuará tendo acesso ao serviço até o final do período já pago.</p>
+
+        <h3>4.2 Garantia de 7 Dias</h3>
+        <p>Oferecemos garantia incondicional de reembolso total dentro dos primeiros 7 dias após a assinatura. Para solicitar, envie email para capeladebolso@gmail.com com o assunto "Reembolso".</p>
+
+        <h3>4.3 Reembolso Após 7 Dias</h3>
+        <p>Após o período de garantia, não realizamos reembolsos proporcionais. O cancelamento impedirá apenas cobranças futuras.</p>
+
+        <h2>5. Uso Apropriado do Serviço</h2>
+
+        <h3>5.1 Responsabilidades do Usuário</h3>
+        <p>Você concorda em:</p>
+        <ul>
+            <li>Utilizar o serviço apenas para fins pessoais e não comerciais;</li>
+            <li>Não compartilhar seu acesso com terceiros;</li>
+            <li>Manter a confidencialidade de suas credenciais de acesso;</li>
+            <li>Não usar o serviço para enviar conteúdo ofensivo, ilegal ou inapropriado;</li>
+        </ul>
+
+        <h3>5.2 Conteúdo do Usuário</h3>
+        <p>Ao compartilhar pedidos de oração ou mensagens conosco, você nos concede permissão para processar essas informações exclusivamente para personalizar o serviço oferecido a você.</p>
+
+        <h2>6. Propriedade Intelectual</h2>
+        <p>Todo o conteúdo disponibilizado pela Capela de Bolso é protegido por direitos autorais e propriedade intelectual. Você não pode copiar ou redistribuir o conteúdo sem autorização.</p>
+
+        <h2>7. Limitação de Responsabilidade</h2>
+
+        <h3>7.1 Natureza do Serviço</h3>
+        <p>A Capela de Bolso oferece conforto espiritual e apoio emocional através de orações personalizadas. Não somos substitutos para aconselhamento médico, psicológico ou psiquiátrico profissional.</p>
+
+        <h3>7.2 Disponibilidade do Serviço</h3>
+        <p>Embora nos esforcemos para manter o serviço disponível 24/7, não garantimos operação ininterrupta. Podemos realizar manutenções programadas mediante aviso prévio quando possível.</p>
+
+        <h2>8. Dependência de Terceiros</h2>
+        <p>Nosso serviço depende de plataformas de terceiros, incluindo WhatsApp. Não nos responsabilizamos por interrupções no serviço do WhatsApp ou falhas de conectividade.</p>
+        <h2>9. Modificações nos Termos</h2>
+        <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Alterações significativas serão comunicadas via WhatsApp ou email com 15 dias de antecedência.</p>
+
+        <h2>10. Privacidade e Proteção de Dados</h2>
+        <p>O tratamento de seus dados pessoais é regido por nossa Política de Privacidade, que faz parte integrante destes Termos de Uso.</p>
+
+        <h2>11. Rescisão</h2>
+        <p>Reservamo-nos o direito de suspender ou encerrar sua conta imediatamente em caso de violação destes termos ou inadimplência.</p>
+
+        <h2>12. Disposições Gerais</h2>
+        <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca da capital do estado de São Paulo.</p>
+
+        <h2>13. Contato</h2>
+        <p>Para dúvidas, sugestões ou solicitações relacionadas a estes Termos de Uso, entre em contato:</p>
+        <ul>
+            <li><strong>Email:</strong> capeladebolso@gmail.com</li>
+            <li><strong>WhatsApp:</strong> (11) 94028-9596</li>
+        </ul>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
+
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+            Ao continuar usando o serviço Capela de Bolso, você confirma que leu, compreendeu e concordou com estes Termos de Uso.
+        </p>
+    </div>
+
+    <div class="footer">
+        <p><a href="index.html">← Voltar para o site</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+        <p style="margin-top: 20px;">© 2026 Capela de Bolso. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
