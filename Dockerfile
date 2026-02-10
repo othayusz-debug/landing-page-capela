@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-# 1. Remove a página padrão "Welcome to Nginx" para não confundir
+# 1. Remove a página padrão "Welcome to Nginx" para limpar a casa
 RUN rm -rf /usr/share/nginx/html/*
 
 # 2. Copia seus arquivos para lá
