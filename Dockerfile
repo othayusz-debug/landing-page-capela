@@ -1,4 +1,4 @@
-FFROM nginx:alpine
+FROM nginx:alpine
 
 # 1. Remove a página padrão "Welcome to Nginx" para não confundir
 RUN rm -rf /usr/share/nginx/html/*
@@ -11,3 +11,4 @@ RUN chmod -R 755 /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
