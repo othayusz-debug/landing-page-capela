@@ -36,7 +36,7 @@
         .header { 
             background: linear-gradient(135deg, rgba(44, 95, 124, 0.95), rgba(74, 124, 89, 0.9));
             color: var(--white); 
-            padding: 60px 20px 80px; /* Mais espaço embaixo para sobreposição */
+            padding: 60px 20px 80px;
             text-align: center; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
@@ -225,4 +225,139 @@
             margin-top: 40px;
         }
         
-        .footer a {
+        .footer a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) { 
+            .container { margin-top: -30px; }
+            .form-section { padding: 30px 20px; }
+            .header h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">🕊️</div>
+        <h1>Fale Conosco</h1>
+        <p>Estamos aqui para ouvir e ajudar você</p>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h2>Envie sua Mensagem</h2>
+            
+            <div id="successMessage" class="success-message">
+                ✅ Mensagem enviada com sucesso! Deus abençoe. Responderemos em breve.
+            </div>
+            <div id="errorMessage" class="error-message">
+                ❌ Falha no envio. Por favor, tente pelo WhatsApp abaixo.
+            </div>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nome Completo *</label>
+                    <input type="text" id="name" required placeholder="Como prefere ser chamado?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefone (WhatsApp)</label>
+                    <input type="tel" id="phone" placeholder="(11) 99999-9999">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Assunto *</label>
+                    <select id="subject" required>
+                        <option value="">Selecione um assunto</option>
+                        <option value="duvida">Dúvida sobre o serviço</option>
+                        <option value="suporte">Suporte técnico</option>
+                        <option value="assinatura">Questão sobre assinatura/pagamento</option>
+                        <option value="cancelamento">Cancelamento/Reembolso</option>
+                        <option value="sugestao">Sugestão/Feedback</option>
+                        <option value="privacidade">Privacidade/Dados pessoais</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensagem *</label>
+                    <textarea id="message" required style="min-height: 150px; resize: none;" placeholder="Escreva aqui sua dúvida ou pedido..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-button" id="submitBtn">Enviar Agora</button>
+            </form>
+        </div>
+
+        <div class="contact-card">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <h2>Prefere WhatsApp?</h2>
+            <p>Fale diretamente conosco para uma resposta mais rápida.</p>
+            <a href="https://wa.me/5511940289565?text=Olá,%20vim%20do%20site%20Capela%20de%20Bolso" class="contact-link" target="_blank">Conversar Agora</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><a href="index.html">← Voltar para a Capela</a></p>
+        <p style="margin-top: 15px; font-size: 0.9em;">© 2026 Capela de Bolso. Todos os direitos reservados.</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Estado de carregamento
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'ENVIANDO...';
+            submitBtn.style.opacity = '0.7';
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            try {
+                // Envio para o Webhook do n8n
+                const response = await fetch('http://n8n.168.138.138.26.sslip.io/webhook/contato', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    console.error('Erro no servidor:', response.status);
+                    throw new Error('Falha no envio');
+                }
+            } catch (error) {
+                console.error(error);
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'ENVIAR AGORA';
+                submitBtn.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
