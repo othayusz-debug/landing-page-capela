@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capela de Bolso - Suas Primeiras 3 Orações São Grátis</title>
     <meta name="description" content="Experimente GRÁTIS por 3 dias. Oração personalizada diária no WhatsApp. Primeira oração em 5 minutos.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕊️</text></svg>">
+    
     <style>
         * {
             margin: 0;
@@ -46,15 +48,53 @@
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 100px 20px 80px;
+            padding: 80px 20px 80px;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        /* O Ícone Sagrado (Cruz + Pomba) */
+        .sacred-icon-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .cross-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0.2;
+            color: var(--secondary);
+            text-shadow: 0 0 30px rgba(232, 196, 104, 0.6);
+        }
+
+        .dove-fg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
             animation: fadeInUp 0.8s ease;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero .subtitle {
@@ -63,6 +103,8 @@
             color: var(--secondary);
             margin-bottom: 15px;
             animation: fadeInUp 0.9s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero p {
@@ -75,28 +117,30 @@
 
         .cta-button {
             display: inline-block;
-            background: var(--accent);
-            color: var(--white);
-            padding: 18px 45px;
-            font-size: 1.2em;
-            font-weight: 600;
+            background: var(--secondary); /* Mudei para Dourado para chamar mais atenção */
+            color: var(--primary); /* Texto escuro para contraste */
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(232, 196, 104, 0.4);
             animation: fadeInUp 1.2s ease;
+            border: 2px solid #fff;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-            background: #5a9469;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(232, 196, 104, 0.6);
+            background: #f0d48a;
         }
 
         .cta-subtext {
-            margin-top: 15px;
-            font-size: 0.9em;
+            margin-top: 20px;
+            font-size: 0.95em;
             opacity: 0.9;
+            font-weight: 600;
         }
 
         .trust-badges {
@@ -112,6 +156,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
         }
 
         /* Testimonials Section */
@@ -218,7 +265,6 @@
             padding: 30px 20px;
         }
 
-        /* Centralizar card "Zero compromisso" */
         .benefit:last-child {
             grid-column: 1 / -1;
             max-width: 400px;
@@ -236,33 +282,49 @@
             color: var(--primary);
         }
 
-        /* Pricing - MODIFICADO PARA FREEMIUM */
+        /* Pricing */
         .pricing {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: var(--white);
             padding: 80px 20px;
             text-align: center;
+            position: relative;
+        }
+        
+        /* Cruz sutil de fundo no pricing */
+        .pricing::before {
+            content: '✝';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 400px;
+            opacity: 0.05;
+            pointer-events: none;
         }
 
         .pricing h2 {
             font-size: 2.5em;
             margin-bottom: 30px;
+            position: relative;
         }
 
         .free-trial-box {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--secondary);
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
             margin: 40px auto;
+            box-shadow: 0 0 30px rgba(232, 196, 104, 0.2);
         }
 
         .free-trial-box h3 {
             font-size: 2em;
             margin-bottom: 20px;
             color: var(--secondary);
+            text-transform: uppercase;
         }
 
         .free-trial-box p {
@@ -276,6 +338,7 @@
             font-weight: bold;
             margin: 30px 0 15px;
             color: var(--secondary);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .price-breakdown {
@@ -402,47 +465,57 @@
             .price-highlight {
                 font-size: 2.5em;
             }
+            .sacred-icon-container {
+                width: 100px;
+                height: 100px;
+            }
+            .cross-bg { font-size: 80px; }
+            .dove-fg { font-size: 60px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <div class="sacred-icon-container">
+                <div class="cross-bg">✝</div>
+                <div class="dove-fg">🕊️</div>
+            </div>
+
+            <div class="subtitle">Capela de Bolso</div>
             <h1>Sua oração personalizada<br>todos os dias no WhatsApp</h1>
             <p>Comece agora. Sem cartão de crédito. Primeira oração em 5 minutos.</p>
             
-            <p style="font-size: 1.15em; max-width: 650px; margin: 25px auto 30px; line-height: 1.7;">Todo dia, você recebe no WhatsApp uma mensagem de conforto e esperança, personalizada para o seu momento de vida. Como se um pastor ou padre parasse o dia dele para gravar um áudio só para você.</p>
+            <p style="font-size: 1.15em; max-width: 650px; margin: 25px auto 30px; line-height: 1.7;">Todo dia, uma mensagem de fé e conforto, feita sob medida para o seu momento de vida. Como se um pastor ou padre parasse o dia dele só para orar por você.</p>
             
-            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">COMEÇAR TESTE GRÁTIS AGORA</a>
+            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">QUERO MINHA ORAÇÃO GRÁTIS</a>
             
-            <div class="cta-subtext">✅ 3 orações gratuitas • ✅ Cancelamento automático • ✅ Sem compromisso</div>
+            <div class="cta-subtext">✨ 3 dias grátis • 🔒 Cancelamento fácil • 🙌 Sem compromisso</div>
 
             <div class="trust-badges">
-                <div class="trust-badge">✓ Mais de 500 pessoas já experimentaram</div>
-                <div class="trust-badge">✓ Sem cobranças ocultas</div>
-                <div class="trust-badge">✓ Dados 100% seguros</div>
+                <div class="trust-badge">🛡️ Mais de 500 vidas tocadas</div>
+                <div class="trust-badge">🛡️ Dados 100% Seguros</div>
+                <div class="trust-badge">🛡️ Sem cobranças ocultas</div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">O que quem já testou está dizendo</h2>
+            <h2 class="section-title">Testemunhos Reais</h2>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    <p class="testimonial-text">"Eu estava passando por um momento muito difícil com a saúde do meu filho. Não tinha forças nem para ir à igreja. Quando recebi a primeira oração grátis, às 6 da manhã, chorei. Era exatamente o que eu precisava ouvir naquele dia. Assinei no segundo dia de teste."</p>
+                    <p class="testimonial-text">"Eu estava passando por um momento muito difícil com a saúde do meu filho. Não tinha forças nem para ir à igreja. Quando recebi a primeira oração grátis, chorei. Era exatamente o que eu precisava ouvir naquele dia."</p>
                     <div class="testimonial-author">Dona Maria, 58 anos - Católica</div>
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Trabalho em turno noturno e nunca consigo ir aos cultos. Sempre me sentia distante de Deus. Testei os 3 dias grátis e me surpreendi. Cada oração parecia feita para o meu dia. Hoje sou assinante."</p>
+                    <p class="testimonial-text">"Trabalho em turno noturno e nunca consigo ir aos cultos. Sempre me sentia distante de Deus. Testei os 3 dias grátis e me surpreendi. Cada oração parecia feita para o meu dia."</p>
                     <div class="testimonial-author">Carlos, 42 anos - Evangélico</div>
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Não sou de nenhuma igreja específica, mas sempre acreditei em Deus. Fiz o teste grátis por curiosidade. O que mais me impressionou é que as orações parecem feitas para o que estou vivendo AGORA. Não é genérica. Continuei pagando porque vale cada centavo."</p>
+                    <p class="testimonial-text">"O que mais me impressionou é que as orações parecem feitas para o que estou vivendo AGORA. Não é genérica. Continuei pagando porque vale cada centavo."</p>
                     <div class="testimonial-author">Ana Paula, 35 anos - Cristã</div>
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                 </div>
@@ -450,183 +523,122 @@
         </div>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">Como funciona? É simples:</h2>
+            <h2 class="section-title">Como receber sua oração?</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-icon">💬</div>
-                    <h3>1. Mande uma mensagem</h3>
-                    <p>Clique no botão e envie "Quero começar meu teste gratuito". Pronto. Você está dentro.</p>
+                    <h3>1. Envie uma mensagem</h3>
+                    <p>Clique no botão e diga "Quero começar". É rápido e automático.</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">⚙️</div>
-                    <h3>2. Configure em 2 minutos</h3>
-                    <p>Escolha áudio ou texto. Voz masculina ou feminina. Conte o que te preocupa no momento.</p>
+                    <h3>2. Conte seu momento</h3>
+                    <p>Em 2 minutos, você nos diz o que te preocupa (família, saúde, trabalho).</p>
                 </div>
                 <div class="step">
-                    <div class="step-icon">🙏</div>
-                    <h3>3. Receba sua primeira oração</h3>
-                    <p>Em menos de 5 minutos você recebe sua primeira oração personalizada. Nos próximos 2 dias, mais uma a cada manhã.</p>
+                    <div class="step-icon">🕊️</div>
+                    <h3>3. Receba a Paz</h3>
+                    <p>Em menos de 5 minutos, sua primeira oração personalizada chega no seu WhatsApp.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">Por que a Capela de Bolso é diferente?</h2>
+            <h2 class="section-title">Por que a Capela de Bolso?</h2>
             <div class="benefits-grid">
                 <div class="benefit">
                     <div class="benefit-icon">🎯</div>
                     <h3>Personalização Real</h3>
-                    <p>Não é mensagem em massa. Cada oração é gerada para você, considerando sua fé e o que você está enfrentando hoje.</p>
+                    <p>Não é mensagem em massa. Cada oração é gerada para você, com base na sua fé e na sua dor.</p>
                 </div>
                 <div class="benefit">
-                    <div class="benefit-icon">💬</div>
+                    <div class="benefit-icon">📲</div>
                     <h3>Direto no WhatsApp</h3>
-                    <p>Sem baixar app. Chega onde você já conversa com sua família.</p>
+                    <p>Sem baixar aplicativos pesados. Chega onde você já conversa com quem ama.</p>
                 </div>
                 <div class="benefit">
                     <div class="benefit-icon">🔄</div>
-                    <h3>Adapta-se à sua vida</h3>
-                    <p>Mudou algo? Você atualiza e as próximas orações refletem isso. É vivo, é real.</p>
+                    <h3>Vivo e Dinâmico</h3>
+                    <p>Mudou de problema? Atualize seu pedido e a próxima oração já muda o foco.</p>
                 </div>
                 <div class="benefit">
-                    <div class="benefit-icon">🕊️</div>
-                    <h3>Zero compromisso</h3>
-                    <p>3 dias grátis. Se não gostar, não acontece nada. Sem cobrança automática no teste.</p>
+                    <div class="benefit-icon">✨</div>
+                    <h3>Teste sem Medo</h3>
+                    <p>3 dias totalmente grátis. Se não sentir paz, não paga nada.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
     <section class="pricing" id="assinar">
         <div class="container">
-            <h2>Como funciona o teste grátis?</h2>
+            <h2>Invista na sua Paz Espiritual</h2>
             
             <div class="free-trial-box">
-                <h3>🎁 3 Dias Totalmente Grátis</h3>
+                <h3>🎁 3 Dias de Presente</h3>
                 <p>✅ 3 orações personalizadas (uma por dia)</p>
-                <p>✅ Acesso completo a todas as funcionalidades</p>
-                <p>✅ Nenhum dado de cartão solicitado</p>
-                <p>✅ Cancelamento automático se não continuar</p>
+                <p>✅ Acesso total às funcionalidades</p>
+                <p>✅ <strong>Sem cartão de crédito</strong></p>
+                <p>✅ Cancelamento automático</p>
             </div>
 
-            <p style="font-size: 1.2em; margin: 30px 0;">Depois dos 3 dias, se você quiser continuar:</p>
+            <p style="font-size: 1.2em; margin: 30px 0;">Após o teste, se (e somente se) você amar:</p>
 
             <div class="price-highlight">R$ 19,90/mês</div>
             <div class="price-breakdown">
-                = R$ 0,66 por dia<br>
-                = Menos que um café
+                = Apenas R$ 0,66 por dia<br>
+                (Menos que um cafezinho)
             </div>
-            <p style="margin-bottom: 30px; font-size: 1.1em;">Por uma palavra de conforto todos os dias, feita só para você.</p>
 
-            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">COMEÇAR TESTE GRÁTIS AGORA</a>
-
-            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 30px; max-width: 600px; margin: 40px auto; text-align: left;">
-                <h3 style="margin-bottom: 20px; text-align: center; font-size: 1.5em;">Quanto custa ter paz de espírito todos os dias?</h3>
-                <p style="margin: 15px 0; font-size: 1.05em;">❌ Ir à igreja todo dia: Impossível para a maioria</p>
-                <p style="margin: 15px 0; font-size: 1.05em;">❌ Terapia semanal: R$ 200-400/sessão</p>
-                <p style="margin: 15px 0; font-size: 1.05em;">❌ Apps de meditação genéricos: Sem conexão espiritual</p>
-                <p style="margin: 15px 0; font-size: 1.1em; color: var(--secondary); font-weight: 600;">✅ Capela de Bolso: R$ 19,90/mês</p>
-            </div>
+            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">QUERO COMEÇAR MEU TESTE</a>
 
             <div class="guarantee">
                 <h3 style="margin-bottom: 10px;">🛡️ Garantia de Satisfação</h3>
-                <p>Durante o teste grátis, você não paga nada. Depois, se continuar e não gostar, devolvemos seu dinheiro nos primeiros 7 dias. Simples assim.</p>
+                <p>Durante o teste grátis, você não paga nada. Depois, se assinar e se arrepender, devolvemos seu dinheiro em até 7 dias. Sem perguntas.</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
+            <h2 class="section-title">Dúvidas Comuns</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">Como funciona o teste grátis? <span>+</span></div>
-                    <div class="faq-answer">Você manda uma mensagem, configura suas preferências em 2 minutos, e recebe 3 orações (uma por dia) totalmente grátis. Não pedimos cartão. Se não gostar, simplesmente para de usar. Se quiser continuar, aí sim fazemos a cobrança de R$ 19,90/mês.</div>
+                    <div class="faq-question">É grátis mesmo? <span>+</span></div>
+                    <div class="faq-answer">Sim! Os primeiros 3 dias são um presente nosso. Você não precisa nem colocar o cartão. Só paga se quiser continuar depois.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Vou ser cobrado automaticamente após os 3 dias? <span>+</span></div>
-                    <div class="faq-answer">Não. Após o teste, você decide se quer continuar. Se decidir assinar, aí sim cobramos R$ 19,90/mês. Durante o teste, nada é cobrado.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Como as orações são personalizadas? <span>+</span></div>
-                    <div class="faq-answer">Ao configurar, você conta o que te preocupa (saúde, família, trabalho). Nossa inteligência busca versículos relevantes e gera uma oração específica para seu momento. Todo dia é uma oração nova, mas sempre lembrando do que você pediu.</div>
+                    <div class="faq-question">Funciona para minha religião? <span>+</span></div>
+                    <div class="faq-answer">Sim. A Capela de Bolso é cristã e ecumênica. Funciona perfeitamente para católicos, evangélicos e cristãos sem denominação.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Posso escolher áudio ou texto? <span>+</span></div>
-                    <div class="faq-answer">Sim! No teste grátis você já pode escolher. Se preferir áudio, pode até definir voz masculina ou feminina. E pode mudar quando quiser.</div>
+                    <div class="faq-answer">Com certeza! Você escolhe se prefere ler ou ouvir. Se escolher áudio, pode até escolher entre voz masculina ou feminina.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Funciona para qualquer religião? <span>+</span></div>
-                    <div class="faq-answer">Sim. Católicos, evangélicos e cristãos em geral. A linguagem e versículos se adaptam à sua tradição.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Como cancelo se não gostar? <span>+</span></div>
-                    <div class="faq-answer">Durante o teste, é só parar de usar. Se virar assinante e quiser cancelar, basta enviar "quero cancelar" no WhatsApp. Zero burocracia.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Meus dados estão seguros? <span>+</span></div>
-                    <div class="faq-answer">Sim. Guardamos apenas nome, telefone e pedidos de oração. Nunca compartilhamos. Se você cancelar, apagamos tudo em 24h.</div>
+                    <div class="faq-question">Como cancelo? <span>+</span></div>
+                    <div class="faq-answer">Muito fácil. Durante o teste, basta parar de usar. Se for assinante, envie "cancelar" no WhatsApp e pronto.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
+            <div class="sacred-icon-container" style="width: 80px; height: 80px; margin-bottom: 20px;">
+                <div class="dove-fg" style="font-size: 60px;">🕊️</div>
+            </div>
             <h2>Você merece começar o dia em paz.</h2>
-            <p>A vida já é difícil o suficiente. Trabalho, contas, preocupações com a família... Experimente acordar por 3 dias sabendo que alguém está orando especificamente por você. Pelo que VOCÊ está enfrentando. Teste grátis, sem compromisso.</p>
-            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">SIM, QUERO TESTAR 3 DIAS GRÁTIS</a>
-            <div class="cta-subtext">Primeira oração em 5 minutos • Sem cartão • Zero risco</div>
+            <p>A vida já é difícil o suficiente. Experimente acordar amanhã sabendo que alguém orou especificamente por você.</p>
+            <a href="https://wa.me/5511999999999?text=Quero%20começar%20meu%20teste%20gratuito" class="cta-button">SIM, QUERO TESTAR GRÁTIS</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p><strong>Capela de Bolso</strong><br>Sua fonte diária de conforto espiritual.</p>
             <p style="margin-top: 20px;">
-                <a href="termos.html">Termos de Uso</a> |
-                <a href="privacidade.html">Política de Privacidade</a> |
-                <a href="contato.html">Contato</a>
-            </p>
-            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">© 2026 Capela de Bolso. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-
-                // Close all
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-
-                // Toggle current
-                answer.style.display = isOpen ? 'none' : 'block';
-            });
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
